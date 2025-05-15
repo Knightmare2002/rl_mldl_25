@@ -5,7 +5,7 @@ import torch
 import gym
 
 from env.custom_hopper import *
-from reinforce.agent_reinforce import Agent, Policy
+from agent_actor_critic import Agent, Policy
 
 
 def parse_args():
@@ -33,7 +33,7 @@ def main():
 	action_space_dim = env.action_space.shape[-1]
 
 	policy = Policy(observation_space_dim, action_space_dim)
-	policy.load_state_dict(torch.load("/home/samuele/rl_mldl_25/reinforce/reinforce_model.mdl"), strict=True)
+	policy.load_state_dict(torch.load("/home/samuele/rl_mldl_25/reinforce_model.mdl"), strict=True)
 
 	agent = Agent(policy, device=args.device)
 
