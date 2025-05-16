@@ -27,8 +27,8 @@ def main():
 	source_env = gym.make('CustomHopper-source-v0')
 	target_env = gym.make('CustomHopper-target-v0')
 
-	source_model = SAC.load('sac_source_model')
-	target_model = SAC.load('sac_target_model')
+	source_model = SAC.load('/home/samuele/rl_mldl_25/sac/sac_source_model.zip')
+	target_model = SAC.load('/home/samuele/rl_mldl_25/sac/sac_target_model.zip')
 
 	
 	print("\n--- source → source ---")
